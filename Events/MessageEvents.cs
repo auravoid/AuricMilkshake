@@ -15,6 +15,10 @@ public class MessageEvents
             {
                 await ThrowMessageException(ex, e.Message, true);
             }
+            
+            // Log message edits into the console
+            Console.WriteLine(e.MessageBefore);
+            Console.WriteLine(e.Message);
         });
         return Task.CompletedTask;
     }
@@ -327,6 +331,16 @@ public class MessageEvents
             {
                 await ThrowMessageException(ex, e.Message, false);
             }
+        });
+        return Task.CompletedTask;
+    }
+    
+    public static Task MessageDeleted(DiscordClient _, MessageDeleteEventArgs e)
+    {
+        Task.Run(async () =>
+        {
+            // Logs deleted messages into console
+            Console.WriteLine(e.Message);
         });
         return Task.CompletedTask;
     }

@@ -240,6 +240,7 @@ internal class Program
         Discord.Ready += ReadyEvent.OnReady;
         Discord.MessageCreated += MessageEvents.MessageCreated;
         Discord.MessageUpdated += MessageEvents.MessageUpdated;
+        Discord.MessageDeleted += MessageEvents.MessageDeleted;
         Discord.ComponentInteractionCreated += ComponentInteractionEvent.ComponentInteractionCreated;
         Discord.GuildCreated += GuildEvents.GuildCreated;
         Discord.GuildDeleted += GuildEvents.GuildDeleted;
